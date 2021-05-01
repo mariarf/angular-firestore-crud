@@ -1,0 +1,20 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="mb-3">
+    <label>Task</label>
+    <input type="text" formControlName="name" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>State</label>
+    <input type="email" formControlName="state" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>Time</label>
+    <input type="text" formControlName="time" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary" [disabled]="!taskForm.valid">Create</button>
+  </div>
+</form>
