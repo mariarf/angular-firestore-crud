@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">State</th>
+      <th scope="col">Time</th>
+      <th scope="col">Action </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of Tasks; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ task.name }}</td>
+      <td>{{ task.state }}</td>
+      <td>{{ task.time }}</td>
+      <td>
+        <span (click)="removeTask(task)" class="text-danger">Delete</span> &nbsp;
+        <span routerLink="/update-task/{{task.id}}" class="text-primary">Edit</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
